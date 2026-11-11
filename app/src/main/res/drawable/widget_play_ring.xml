@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Play on Prism's widgets, as in the app: a white disc edged with a thin ring of split light (no gap). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="52dp"
+    android:height="52dp"
+    android:viewportWidth="52"
+    android:viewportHeight="52">
+    <path
+        android:pathData="M26,1.75a24.25,24.25 0,1 1,0 48.5a24.25,24.25 0,1 1,0 -48.5z"
+        android:strokeWidth="1.5">
+        <aapt:attr name="android:strokeColor">
+            <gradient android:type="sweep" android:centerX="26" android:centerY="26">
+                <item android:offset="0.00" android:color="#FF848484" />
+                <item android:offset="0.17" android:color="#FFB1B1B1" />
+                <item android:offset="0.33" android:color="#FFD4D4D4" />
+                <item android:offset="0.50" android:color="#FFA5A5A5" />
+                <item android:offset="0.67" android:color="#FF999999" />
+                <item android:offset="0.83" android:color="#FF787878" />
+                <item android:offset="1.00" android:color="#FF848484" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M26,2.5a23.5,23.5 0,1 1,0 47a23.5,23.5 0,1 1,0 -47z" />
+</vector>

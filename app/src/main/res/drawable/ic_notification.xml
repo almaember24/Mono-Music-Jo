@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The Prism mark (ic_launcher_foreground) at 24 dp for the status bar: the same prism, five bars instead of seven so
+     they don't run together (three read as a warning sign's "!"). Drawn in the launcher's 108-unit grid, scaled to 0.4
+     round the mark's centre. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <group
+        android:scaleX="0.4"
+        android:scaleY="0.4"
+        android:translateX="-9.6"
+        android:translateY="-9.8">
+        <path
+            android:pathData="M49.67,37.5 A5,5 0 0 1 58.33,37.5 L75.07,66.5 A5,5 0 0 1 70.74,74 L37.26,74 A5,5 0 0 1 32.93,66.5 Z"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="4.2"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+        <path
+            android:pathData="M43,58 L43,62 M48.5,55 L48.5,65 M54,52 L54,68 M59.5,55 L59.5,65 M65,58 L65,62"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="3.4"
+            android:strokeLineCap="round" />
+    </group>
+</vector>

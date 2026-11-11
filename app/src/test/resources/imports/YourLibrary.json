@@ -1,0 +1,39 @@
+{
+  "tracks" : [ {
+    "artist" : "The Weeknd",
+    "album" : "After Hours",
+    "track" : "Blinding Lights",
+    "uri" : "spotify:track:0VjIjW4GlUZAMYd2vXMi3b"
+  }, {
+    "artist" : "Bad Bunny",
+    "album" : "Un Verano Sin Ti",
+    "track" : "Tití Me Preguntó",
+    "uri" : "spotify:track:1IHWl5LamUGEuP4ozKQSXZ"
+  }, {
+    "artist" : "The Weeknd",
+    "album" : "After Hours",
+    "track" : "Blinding Lights",
+    "uri" : "spotify:track:0VjIjW4GlUZAMYd2vXMi3b"
+  } ],
+  "albums" : [ {
+    "artist" : "Fleetwood Mac",
+    "album" : "Rumours",
+    "uri" : "spotify:album:0BwWUstDMUbgq2NYONRqlu"
+  } ],
+  "shows" : [ {
+    "name" : "Some Podcast",
+    "publisher" : "Someone",
+    "uri" : "spotify:show:2MAi0BvDc6GTFvKFPXnkCL"
+  } ],
+  "episodes" : [ ],
+  "bannedTracks" : [ ],
+  "artists" : [ {
+    "name" : "Radiohead",
+    "uri" : "spotify:artist:4Z8W4fKeB5YxbusRsdQVPb"
+  }, {
+    "name" : "Rosalía",
+    "uri" : "spotify:artist:7ltDVBr6mKbRvohxheJ9h1"
+  } ],
+  "bannedArtists" : [ ],
+  "other" : [ ]
+}

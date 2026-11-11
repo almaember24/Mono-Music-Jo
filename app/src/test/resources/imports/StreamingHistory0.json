@@ -1,0 +1,16 @@
+[ {
+  "endTime" : "2019-11-03 21:01",
+  "artistName" : "Queen",
+  "trackName" : "Bohemian Rhapsody - Remastered 2011",
+  "msPlayed" : 354320
+}, {
+  "endTime" : "2019-11-03 21:02",
+  "artistName" : "Unknown Artist",
+  "trackName" : "Unknown Track",
+  "msPlayed" : 61200
+}, {
+  "endTime" : "2019-11-03 21:30",
+  "artistName" : "The Joe Rogan Experience",
+  "trackName" : "#1385 - Some Guest",
+  "msPlayed" : 1200000
+} ]

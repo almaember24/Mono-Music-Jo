@@ -1,0 +1,6 @@
+Time zone places (assets/looks/zones.txt)
+
+Each time zone's main place (latitude and longitude) and the old names of zones, taken from the files zone1970.tab and
+backward of the tz database (https://www.iana.org/time-zones, https://github.com/eggert/tz).
+
+Those files say: "This file is in the public domain."

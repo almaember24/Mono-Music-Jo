@@ -1,0 +1,6 @@
+{
+  "contents": { "someNewRenderer": { "rows": [
+    { "musicResponsiveListItemRenderer": { "title": "a row in a shape Prism wasn't written for" } },
+    { "musicResponsiveListItemRenderer": { "flexColumns": "not even a list", "menu": { "menuRenderer": { "items": [ { "somethingElse": {} } ] } } } }
+  ] } }
+}

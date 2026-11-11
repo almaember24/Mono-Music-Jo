@@ -1,0 +1,57 @@
+name: Bug report
+description: Something in Prism doesn't work the way it should
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting. The more detail, the faster it gets fixed. Please leave out anything personal (account names, emails, cookies).
+  - type: input
+    id: version
+    attributes:
+      label: Prism version
+      description: Settings → About
+      placeholder: "1.5.9"
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Phone and Android version
+      placeholder: "Pixel 8, Android 16"
+    validations:
+      required: true
+  - type: dropdown
+    id: signed-in
+    attributes:
+      label: Signed in to YouTube Music?
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open …
+        2. Tap …
+        3. …
+  - type: input
+    id: song
+    attributes:
+      label: Song, album or playlist (if it's about playback or lyrics)
+      description: A YouTube Music link is perfect.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Optional. `adb logcat` output around the error helps a lot with playback problems.
+      render: text

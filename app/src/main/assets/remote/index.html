@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#080808">
+<meta name="referrer" content="no-referrer">
+<title>Prism Remote</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="remote.css">
+<script src="remote.js" defer></script>
+</head>
+<body>
+<div id="backdrop" aria-hidden="true"></div>
+
+<main id="pair" class="pair" hidden>
+  <div class="card pair-card">
+    <img src="icon.svg" alt="" class="logo" width="64" height="64">
+    <h1>Prism Remote</h1>
+    <p id="pair-phone" class="lead">Pair this browser with your phone.</p>
+    <p class="hint">On the phone, open <b>Settings → Prism Connect</b> and type the six-digit pairing code shown under <b>Control from a browser</b>.</p>
+    <form id="pair-form" autocomplete="off">
+      <input id="code" inputmode="numeric" maxlength="7" placeholder="000 000" aria-label="Pairing code" required>
+      <button type="submit" class="primary">Pair</button>
+    </form>
+    <p id="pair-error" class="error" role="alert"></p>
+  </div>
+</main>
+
+<main id="app" class="app" hidden>
+  <header class="top">
+    <div class="brand"><img src="icon.svg" alt="" width="22" height="22"><span>Prism</span></div>
+    <div id="output" class="output" title="Where the music is playing"></div>
+    <button id="unpair" class="ghost small" type="button" title="Unpair this browser">Unpair</button>
+  </header>
+
+  <div class="columns">
+    <section class="now-card" aria-label="Now playing">
+      <div class="art-wrap"><img id="art" alt="" class="art"></div>
+      <div class="meta">
+        <div id="title" class="title">Nothing playing</div>
+        <div id="artist" class="artist"></div>
+        <div id="source" class="source"></div>
+      </div>
+      <div class="progress">
+        <span id="pos" class="time">0:00</span>
+        <input id="seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Position">
+        <span id="dur" class="time">0:00</span>
+      </div>
+      <div class="transport">
+        <button id="shuffle" class="icon" type="button" aria-label="Shuffle"></button>
+        <button id="prev" class="icon big" type="button" aria-label="Previous"></button>
+        <button id="play" class="icon play" type="button" aria-label="Play"></button>
+        <button id="next" class="icon big" type="button" aria-label="Next"></button>
+        <button id="repeat" class="icon" type="button" aria-label="Repeat"></button>
+      </div>
+      <div class="volume">
+        <span class="vol-icon" id="vol-down" aria-hidden="true"></span>
+        <input id="volume" type="range" min="0" max="100" value="50" aria-label="Volume">
+        <span class="vol-icon" id="vol-up" aria-hidden="true"></span>
+      </div>
+    </section>
+
+    <section class="side">
+      <nav class="tabs" role="tablist">
+        <button role="tab" type="button" data-tab="lyrics" aria-selected="true">Lyrics</button>
+        <button role="tab" type="button" data-tab="queue" aria-selected="false">Queue</button>
+        <button role="tab" type="button" data-tab="search" aria-selected="false">Search</button>
+      </nav>
+      <div id="tab-lyrics" class="panel" role="tabpanel">
+        <div id="lyrics" class="lyrics"></div>
+      </div>
+      <div id="tab-queue" class="panel" role="tabpanel" hidden>
+        <ol id="queue" class="queue"></ol>
+      </div>
+      <div id="tab-search" class="panel" role="tabpanel" hidden>
+        <form id="search-form" class="search" role="search">
+          <input id="q" type="search" placeholder="Search songs" aria-label="Search songs" autocomplete="off">
+        </form>
+        <ul id="results" class="results"></ul>
+      </div>
+    </section>
+  </div>
+
+  <div id="offline" class="offline" role="status" hidden>Can't reach Prism. Check that it's open on your phone and on the same Wi-Fi.</div>
+  <div id="toast" class="toast" role="status" hidden></div>
+</main>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The app icon shortcuts' tile (AppShortcuts): Prism's dark ink. -->
+    <color name="shortcut_background">#FF181818</color>
+</resources>

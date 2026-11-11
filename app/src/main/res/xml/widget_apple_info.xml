@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/widget_apple_desc"
+    android:initialLayout="@layout/widget_apple"
+    android:previewLayout="@layout/widget_apple"
+    android:minWidth="250dp"
+    android:minHeight="130dp"
+    android:minResizeWidth="220dp"
+    android:minResizeHeight="120dp"
+    android:targetCellWidth="4"
+    android:targetCellHeight="2"
+    android:resizeMode="horizontal|vertical"
+    android:updatePeriodMillis="0"
+    android:widgetCategory="home_screen"
+    android:configure="com.prism.music.ui.screens.WidgetConfigActivity"
+    android:widgetFeatures="reconfigurable|configuration_optional" />

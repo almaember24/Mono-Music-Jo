@@ -1,0 +1,51 @@
+{
+  "playlists" : [ {
+    "name" : "Road trip",
+    "lastModifiedDate" : "2023-08-20",
+    "collaborators" : [ ],
+    "items" : [ {
+      "track" : {
+        "trackName" : "Africa",
+        "artistName" : "TOTO",
+        "albumName" : "Toto IV",
+        "trackUri" : "spotify:track:2374M0fQpWi3dLnB54qaLX"
+      },
+      "episode" : null,
+      "audiobook" : null,
+      "localTrack" : null,
+      "addedDate" : "2023-08-20"
+    }, {
+      "track" : null,
+      "episode" : {
+        "episodeName" : "An episode",
+        "showName" : "Some Podcast",
+        "episodeUri" : "spotify:episode:xyz"
+      },
+      "localTrack" : null,
+      "addedDate" : "2023-08-20"
+    }, {
+      "track" : null,
+      "episode" : null,
+      "localTrack" : {
+        "uri" : "spotify:local:Me:Demo:Song:200"
+      },
+      "addedDate" : "2023-08-21"
+    }, {
+      "track" : {
+        "trackName" : "Mr. Brightside",
+        "artistName" : "The Killers",
+        "albumName" : "Hot Fuss",
+        "trackUri" : "spotify:track:003vvx7Niy0yvhvHt4a68B"
+      },
+      "addedDate" : "2023-08-21"
+    } ],
+    "description" : "Windows down",
+    "numberOfFollowers" : 0
+  }, {
+    "name" : "Empty one",
+    "lastModifiedDate" : "2022-01-01",
+    "items" : [ ],
+    "description" : null,
+    "numberOfFollowers" : 0
+  } ]
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The Prism mark (1.7): a rounded prism, its sound as seven bars inside it. 108-unit adaptive icon grid; the mark spans 32-76 x 35-74, inside the 66-unit safe circle. All white: the Spectrum icon, and the monochrome (themed) icon layer. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
+    <!-- Up 2.5: a triangle's weight sits low (its centroid is two-thirds down), so a centred box looks low in a circle. -->
+    <group android:translateY="-2.5">
+    <path android:pathData="M49.67,37.5 A5,5 0 0 1 58.33,37.5 L75.07,66.5 A5,5 0 0 1 70.74,74 L37.26,74 A5,5 0 0 1 32.93,66.5 Z" android:strokeColor="#FFFFFFFF" android:strokeWidth="2.8" android:strokeLineCap="round" android:strokeLineJoin="round" />
+    <path android:pathData="M41.4,59.5 L41.4,62.5" android:strokeColor="#FFFFFFFF" android:strokeWidth="2.8" android:strokeLineCap="round" android:strokeLineJoin="round" />
+    <path android:pathData="M45.6,57 L45.6,65" android:strokeColor="#FFFFFFFF" android:strokeWidth="2.8" android:strokeLineCap="round" android:strokeLineJoin="round" />
+    <path android:pathData="M49.8,54 L49.8,68" android:strokeColor="#FFFFFFFF" android:strokeWidth="2.8" android:strokeLineCap="round" android:strokeLineJoin="round" />
+    <path android:pathData="M54,51 L54,71" android:strokeColor="#FFFFFFFF" android:strokeWidth="2.8" android:strokeLineCap="round" android:strokeLineJoin="round" />
+    <path android:pathData="M58.2,54 L58.2,68" android:strokeColor="#FFFFFFFF" android:strokeWidth="2.8" android:strokeLineCap="round" android:strokeLineJoin="round" />
+    <path android:pathData="M62.4,57 L62.4,65" android:strokeColor="#FFFFFFFF" android:strokeWidth="2.8" android:strokeLineCap="round" android:strokeLineJoin="round" />
+    <path android:pathData="M66.6,59.5 L66.6,62.5" android:strokeColor="#FFFFFFFF" android:strokeWidth="2.8" android:strokeLineCap="round" android:strokeLineJoin="round" />
+    </group>
+</vector>

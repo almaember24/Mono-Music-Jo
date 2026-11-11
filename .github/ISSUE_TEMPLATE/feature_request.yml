@@ -1,0 +1,20 @@
+name: Feature request
+description: An idea for something Prism could do
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like Prism to do?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would it help?
+      description: What are you trying to do today, and what gets in the way?
+  - type: textarea
+    id: elsewhere
+    attributes:
+      label: Seen it somewhere else?
+      description: Optional. Another app that does this well, with a screenshot if you have one.

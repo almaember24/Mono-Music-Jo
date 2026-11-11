@@ -1,0 +1,165 @@
+# The matcher's gold set, before labelling: title | artist | album | kind
+# kind: chart, world (not English), trap (another version exists or the title's shared), feat, symbol
+Blinding Lights | The Weeknd | After Hours | chart
+Shape of You | Ed Sheeran | ÷ (Deluxe) | chart
+Someone Like You | Adele | 21 | chart
+Rolling in the Deep | Adele | 21 | chart
+Uptown Funk (feat. Bruno Mars) | Mark Ronson | Uptown Special | feat
+Bad Guy | Billie Eilish | WHEN WE ALL FALL ASLEEP, WHERE DO WE GO? | chart
+Levitating | Dua Lipa | Future Nostalgia | chart
+Watermelon Sugar | Harry Styles | Fine Line | chart
+As It Was | Harry Styles | Harry's House | chart
+Anti-Hero | Taylor Swift | Midnights | chart
+Cruel Summer | Taylor Swift | Lover | chart
+Flowers | Miley Cyrus | Endless Summer Vacation | chart
+drivers license | Olivia Rodrigo | SOUR | chart
+good 4 u | Olivia Rodrigo | SOUR | chart
+Stay | The Kid LAROI | F*CK LOVE 3: OVER YOU | chart
+Peaches (feat. Daniel Caesar & Giveon) | Justin Bieber | Justice | feat
+Sunflower - Spider-Man: Into the Spider-Verse | Post Malone | Spider-Man: Into the Spider-Verse | trap
+Circles | Post Malone | Hollywood's Bleeding | chart
+Señorita | Shawn Mendes | Shawn | chart
+Dance Monkey | Tones And I | The Kids Are Coming | chart
+Believer | Imagine Dragons | Evolve | chart
+Thunder | Imagine Dragons | Evolve | chart
+Counting Stars | OneRepublic | Native | chart
+Viva La Vida | Coldplay | Viva La Vida or Death and All His Friends | chart
+Yellow | Coldplay | Parachutes | chart
+Mr. Brightside | The Killers | Hot Fuss | chart
+Seven Nation Army | The White Stripes | Elephant | chart
+Smells Like Teen Spirit | Nirvana | Nevermind | chart
+Creep | Radiohead | Pablo Honey | trap
+Karma Police | Radiohead | OK Computer | chart
+Wonderwall - Remastered | Oasis | (What's The Story) Morning Glory? (Remastered) | trap
+Don't Look Back In Anger | Oasis | (What's The Story) Morning Glory? | chart
+Bohemian Rhapsody - Remastered 2011 | Queen | A Night At The Opera (2011 Remaster) | trap
+Don't Stop Me Now - Remastered 2011 | Queen | Jazz (2011 Remaster) | trap
+Hotel California - 2013 Remaster | Eagles | Hotel California (2013 Remaster) | trap
+Hotel California - Live On MTV, 1994 | Eagles | Hell Freezes Over | trap
+Sweet Child O' Mine | Guns N' Roses | Appetite For Destruction | chart
+Back In Black | AC/DC | Back In Black | symbol
+Livin' On A Prayer | Bon Jovi | Slippery When Wet | chart
+Africa | TOTO | Toto IV | chart
+Take on Me | a-ha | Hunting High and Low | chart
+Billie Jean | Michael Jackson | Thriller | chart
+Thriller | Michael Jackson | Thriller | trap
+Like a Prayer | Madonna | Like a Prayer | chart
+Toxic | Britney Spears | In The Zone | trap
+Umbrella | Rihanna | Good Girl Gone Bad | trap
+Halo | Beyoncé | I AM...SASHA FIERCE | trap
+Crazy In Love (feat. Jay-Z) | Beyoncé | Dangerously In Love | feat
+Hey Ya! | Outkast | Speakerboxxx/The Love Below | symbol
+In Da Club | 50 Cent | Get Rich Or Die Tryin' | chart
+Lose Yourself | Eminem | 8 Mile | chart
+HUMBLE. | Kendrick Lamar | DAMN. | symbol
+God's Plan | Drake | Scorpion | chart
+One Dance | Drake | Views | feat
+SICKO MODE | Travis Scott | ASTROWORLD | chart
+Old Town Road - Remix | Lil Nas X | 7 EP | trap
+Rockstar (feat. 21 Savage) | Post Malone | beerbongs & bentleys | feat
+Gold Digger | Kanye West | Late Registration | trap
+Stronger | Kanye West | Graduation | trap
+TiK ToK | Kesha | Animal | symbol
+Raise Your Glass | P!nk | Greatest Hits... So Far!!! | symbol
+Hallelujah | Jeff Buckley | Grace | trap
+Hurt | Johnny Cash | American IV: The Man Comes Around | trap
+Respect | Aretha Franklin | I Never Loved a Man the Way I Love You | trap
+Respect - 2002 Remaster | Aretha Franklin | I Never Loved a Man the Way I Love You | trap
+Yesterday - Remastered 2009 | The Beatles | Help! (Remastered) | trap
+Here Comes The Sun - Remastered 2009 | The Beatles | Abbey Road (Remastered) | trap
+Hey Jude - Remastered 2015 | The Beatles | 1 (Remastered) | trap
+Imagine - Remastered 2010 | John Lennon | Imagine | trap
+Dreams - 2004 Remaster | Fleetwood Mac | Rumours (Super Deluxe) | trap
+Go Your Own Way - 2004 Remaster | Fleetwood Mac | Rumours (Super Deluxe) | trap
+Stairway to Heaven - Remaster | Led Zeppelin | Led Zeppelin IV (Remaster) | trap
+Wish You Were Here | Pink Floyd | Wish You Were Here | trap
+Comfortably Numb | Pink Floyd | The Wall | chart
+Numb | Linkin Park | Meteora | trap
+In the End | Linkin Park | Hybrid Theory | chart
+Chop Suey! | System Of A Down | Toxicity | symbol
+Mr. Blue Sky | Electric Light Orchestra | Out of the Blue | chart
+September | Earth, Wind & Fire | The Best Of Earth, Wind & Fire, Vol. 1 | symbol
+Dancing Queen | ABBA | Arrival | chart
+Gimme! Gimme! Gimme! (A Man After Midnight) | ABBA | Voulez-Vous | symbol
+Get Lucky (feat. Pharrell Williams & Nile Rodgers) | Daft Punk | Random Access Memories | feat
+One More Time | Daft Punk | Discovery | chart
+Titanium (feat. Sia) | David Guetta | Nothing but the Beat | feat
+Wake Me Up | Avicii | True | chart
+Levels - Radio Edit | Avicii | Levels | trap
+Strobe | deadmau5 | For Lack Of A Better Name | trap
+Faded | Alan Walker | Different World | trap
+Lean On (feat. MØ & DJ Snake) | Major Lazer | Peace Is The Mission | feat
+Don't Start Now | Dua Lipa | Future Nostalgia | chart
+Physical | Dua Lipa | Future Nostalgia | trap
+Espresso | Sabrina Carpenter | Short n' Sweet | chart
+Please Please Please | Sabrina Carpenter | Short n' Sweet | chart
+BIRDS OF A FEATHER | Billie Eilish | HIT ME HARD AND SOFT | chart
+Lovin On Me | Jack Harlow | Lovin On Me | chart
+Vampire | Olivia Rodrigo | GUTS | chart
+Kill Bill | SZA | SOS | chart
+Snooze | SZA | SOS | chart
+Die With A Smile | Lady Gaga | Die With A Smile | feat
+Shallow | Lady Gaga | A Star Is Born Soundtrack | trap
+Bad Romance | Lady Gaga | The Fame Monster (Deluxe Edition) | chart
+Poker Face | Lady Gaga | The Fame | chart
+Royals | Lorde | Pure Heroine | chart
+Chandelier | Sia | 1000 Forms Of Fear | chart
+Hello | Adele | 25 | trap
+Love Story (Taylor's Version) | Taylor Swift | Fearless (Taylor's Version) | trap
+Love Story | Taylor Swift | Fearless | trap
+All Too Well (10 Minute Version) (Taylor's Version) (From The Vault) | Taylor Swift | Red (Taylor's Version) | trap
+Despacito | Luis Fonsi | VIDA | world
+Despacito - Remix | Luis Fonsi | Despacito Feat. Justin Bieber (Remix) | trap
+Tití Me Preguntó | Bad Bunny | Un Verano Sin Ti | world
+Me Porto Bonito | Bad Bunny | Un Verano Sin Ti | world
+DtMF | Bad Bunny | DeBÍ TiRAR MáS FOToS | world
+La Bachata | Manuel Turizo | 2000 | world
+Bzrp Music Sessions, Vol. 53 | Bizarrap | Bzrp Music Sessions, Vol. 53 | world
+Hips Don't Lie (feat. Wyclef Jean) | Shakira | Oral Fixation, Vol. 2 | world
+Bailando - Spanish Version | Enrique Iglesias | SEX AND LOVE | trap
+Malamente | ROSALÍA | El Mal Querer | world
+Gasolina | Daddy Yankee | Barrio Fino | world
+Dynamite | BTS | Dynamite (DayTime Version) | world
+Butter | BTS | Butter | world
+Gangnam Style | PSY | PSY 6甲 Part.1 | world
+How You Like That | BLACKPINK | THE ALBUM | world
+APT. | ROSÉ | rosie | world
+Super Shy | NewJeans | NewJeans 'Super Shy' | world
+Lemon | 米津玄師 | STRAY SHEEP | world
+夜に駆ける | YOASOBI | THE BOOK | world
+アイドル | YOASOBI | アイドル | world
+紅蓮華 | LiSA | LEO-NiNE | world
+Tum Hi Ho | Arijit Singh | Aashiqui 2 | world
+Kesariya | Arijit Singh | Brahmastra | world
+Jai Ho | A.R. Rahman | Slumdog Millionaire | world
+Habibi | Mohamed Hamaki | Habibi | world
+Tamally Maak | Amr Diab | Tamally Maak | world
+Je te promets | Johnny Hallyday | Gang | world
+Alors on danse | Stromae | Cheese | world
+Papaoutai | Stromae | Racine carrée | world
+Non, je ne regrette rien | Édith Piaf | Non, je ne regrette rien | world
+99 Luftballons | Nena | 99 Luftballons | world
+Du hast | Rammstein | Sehnsucht | world
+Atemlos durch die Nacht | Helene Fischer | Farbenspiel | world
+Volare (Nel blu dipinto di blu) | Domenico Modugno | Volare | world
+Zitti e buoni | Måneskin | Teatro d'ira - Vol. I | world
+Beggin' | Måneskin | Chosen | trap
+Kolmanda | Some Unknown Act That Does Not Exist | Nowhere | none
+Starboy | The Weeknd | Starboy | feat
+Save Your Tears (Remix) | The Weeknd | Save Your Tears (Remix) | trap
+Save Your Tears | The Weeknd | After Hours | trap
+Heat Waves | Glass Animals | Dreamland | chart
+Shivers | Ed Sheeran | = | symbol
+Bad Habits | Ed Sheeran | = | chart
+Perfect | Ed Sheeran | ÷ (Deluxe) | trap
+Thinking out Loud | Ed Sheeran | x (Deluxe Edition) | chart
+Stressed Out | Twenty One Pilots | Blurryface | chart
+Zombie | The Cranberries | No Need To Argue | trap
+Smooth (feat. Rob Thomas) | Santana | Supernatural | feat
+Clocks | Coldplay | A Rush of Blood to the Head | chart
+Somebody That I Used To Know | Gotye | Making Mirrors | feat
+Pumped Up Kicks | Foster The People | Torches | chart
+Radioactive | Imagine Dragons | Night Visions | chart
+Firework | Katy Perry | Teenage Dream | chart
+Roar | Katy Perry | PRISM | chart
+Happy - From "Despicable Me 2" | Pharrell Williams | Despicable Me 2 | trap

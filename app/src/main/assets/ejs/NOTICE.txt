@@ -1,0 +1,11 @@
+yt.solver.core.min.js and yt.solver.lib.min.js come from yt-dlp's EJS
+(https://github.com/yt-dlp/ejs, v0.8.0), released under the Unlicense.
+
+yt.solver.lib.min.js bundles:
+  - meriyah (https://github.com/meriyah/meriyah), ISC License,
+    Copyright (c) 2019 and later, KFlash and others.
+  - astring (https://github.com/davidbonnet/astring), MIT License,
+    Copyright (c) 2015, David Bonnet.
+
+The full license texts are in ../licenses/ (ejs.txt, meriyah.txt, astring.txt)
+and in the app under Settings > About > Open-source licenses.

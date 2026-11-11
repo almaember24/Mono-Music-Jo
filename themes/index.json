@@ -1,0 +1,62 @@
+{
+  "format": 1,
+  "looks": [
+    {
+      "id": "aurora-glass",
+      "name": "Aurora Glass",
+      "by": "Yigder",
+      "note": "Liquid Glass over drifting aurora, airy type",
+      "code": "PRISMLOOK1:ZZDBSsQwEIZfRea8Qqsgkltcy25x10raBQuB0E2zbrHt1EnqpfTdjakHXa_fP3zzz0zQAwM-ElJ1tWkra2EFn8AmcGfTGdVhbfyAZY9cPPnIDkY7Gjs1kLHGhYgfRCa4D9vmY2xq9RY0DI4s9vBEaJ35TSNPj5V-rwkHGwyThG22TyQwCYtNwkpCnnCx3l7SXfoguCgvsUhedrz8ryiK9HmT_-GzL6CRekPL-uS1CP1P2Dulz9jo5WaeijKMtkjK4kg_fH3Ii2zvk0pr038_oWHX8W18H91EdzDPXw"
+    },
+    {
+      "id": "graphite",
+      "name": "Graphite",
+      "by": "Yigder",
+      "note": "Ink on graphite, compact, a docked tab bar",
+      "code": "PRISMLOOK1:bdDBisIwEAbgd5mze9hrbjGGtmxrSxpZhEDpxmjDlkSSKEjpu--s3YPoHjNfGP5_JnBAIAv9ebDJwAquQCYY7WlIXUy30aBG8pkXkiNqP_rQRX8JegG2a2VdofRaG5dwZsnbO76_ev19CP4c798mBXldcQVEQSZo87tOwUpBy6lg-eu8LNaCiv0rCN6UdP_fIimLbdY-yYxRjt6lTg_e_mXOOEaRomBoF9sdjIs23ZY6ddVQJhFcf33ov6nZB9_cDxCcCUupdreWJYd5_gE"
+    },
+    {
+      "id": "sunset-drive",
+      "name": "Sunset Drive",
+      "by": "Yigder",
+      "note": "A dusk horizon, warm light, ringed controls",
+      "code": "PRISMLOOK1:bc49b8MgEAbgv1LdnA79WthcByWoxI4AD6ksIZdQBdUGBDhSZPm_lyQdWqXb6X3uTu8EFhDw0Uad7pbBHDUs4AhognTQg5aD2-u8ENGyYG-ZotcqhXGQPuh8ciHeVByLjB-d-toH5-MlnlpY1xvcAjoPjLzXVQuLFjguWLm-iSl5ZQXb3eQMb2mx--eLEKRa8b8w5xbK9S7I6MagrtXLhot6k6VTSttzZ4Pun54fH15y9ulskurgzM_yCufOgpEyWwqdjd6FJGM69VevG0FJhbMOxhrp--6kwy_fEkphnr8B"
+    },
+    {
+      "id": "forest-walk",
+      "name": "Forest Walk",
+      "by": "Yigder",
+      "note": "Light, serif, contour lines in green",
+      "code": "PRISMLOOK1:bc_BisIwEAbgV5E5u4dVUDe3WlNbqEaSyCIEShuzKLZNSVJBSt_dVD2tXv9v5memgxoQRNoo60a_eXmBMVwBdeBOqlJZpY_Ku0Vpso65N9so6UxbZY3fUO5hEaGYDVjk8nI0urGPuBMQkw0WgASEZMvJnjIBYwEMBzSM3_M0WdKAHt6B4l0aHD4VcZ5s1-yf9P4UqUttMqtbI58PhHvGycZLLqWqh8PP6Ot7Op_MFosfH__p2mXypM-veYZpEg0PS9MWhfJd7lY-aUnSFfT9HQ"
+    },
+    {
+      "id": "nothing-theme",
+      "name": "Nothing",
+      "by": "ZeroxDev",
+      "note": "A Nothing-themed look, light and modern",
+      "code": "PRISMLOOK1:ZVJdb9owFP0vee4mZxqw5S2kUKKFpAqhU58sx1zAWmIj20GlVf_7_BES2PIQWefcj3PPvR8BD6IgF_rI-CF4CM5B9BHoI7SAW7EDw6noMS5_GYqKRkisRCepx5PtpirWhiGUAtcGY9GX6WQS_jBYww5HjZW-ND5487xIqnI7hmN4I9Qm1VE4gi7NVUIGVCegWnYtPklQoO-7DqTS4qQctzQfQmj-YB_hT4TcAyXXB0LL28Sa8J1yClyzTu4JBawZ_7dTzzgH_JjhdDabfQunzheuJVFGO5yh8cNWcW5ce7Q-XCSjCu9FX9RAGt6MM5Q4Z_ZR-BVNXBnJQfo5ymKb2-SO4R1wxfTFCyrWy6Ks4nm2sGWYbgAr9u4NzuLyycKUyN2IbtZxlhmUk_PNMtZpnhrC4C3jDJ8acgF5u6wsXQ-kFAfjvheWpbnt0SfUhP45SNHxnSPn2ba0uiTh6iTk7fafstfn1cZNebadBnmjUYrKrq7vZKzitLzvaP6i80a-pPmrneDM-KXBWnAgsh3Oaah23ZmK4iRZ5NVYy_tHzMXxq5byjm7BDz0vqpVrpDoT_Q6-XLFcjuv9v0pP1E0nB1E9dnXUHDuH4fx68v4u0PdwYo9DglWF7W5dl9_xZhV8fv4F",
+      "file": "nothing-theme.prismlook"
+    },
+    {
+      "id": "evergreen",
+      "name": "Evergreen",
+      "by": "Yigder",
+      "note": "Near-black and a bright green, heavy titles, lyrics on the cover's color",
+      "code": "PRISMLOOK1:dZJfb5swFMW_C8-dlErdJvFGjNWgkjA5zqo9Wca5AavEZrbJFlX97rUNgv5RX88Pn3PPvTwnKkkTfAHTGACV3CSXJH1OXAtnYGd9BE9tmmfkwSOhO22Y1YMRo44Oe1ptPeFCgHJek-m327uf33-sVqtZZvCfiwDr9NaLnWxax6y7dqPJ46ag2Ot2MCcugDkZnWy6wwdKstKjk_YuotVyyr3H1RZTUiDP3LUHJjpurRRzRt_xKxhv5Tpg_yAkxofrqsxjEaPA2CjtD2ta4jjX30EeWROsolFocDLaOvhK7XkDi6r45U2tvEIPOJ_kjtfQjXlZ-Zj92YfBec2k0GopnCGEd9Sjs1SSTR0WR5SRfIZG-4PZ0bIsdngpXXPx1Bg9qGOEW7zfhDTDle21ebv59YHSahdWL8xQ1-_CNllBJt-Zxvu_n3Rmrh3O9VQ8gHpwznezLe9Hw19FWcbVX0JOkBk3Tlo3dkAFQeMZrkYK-7n2pH9oh6rfmDBUlRVZvvl88Alw_--p8eo0IzR5eXkF"
+    },
+    {
+      "id": "redline",
+      "name": "Redline",
+      "by": "Yigder",
+      "note": "Pure black and red, plain type, a slim mini player",
+      "code": "PRISMLOOK1:dZJfb5swFMW_C8_rlErtNPFGCFJRKZnAqOqTZTs3YM3YzDbZoqrfvf6DIJO213Ps3_G51--JTNKkgZPgEpIvySVJ3xM7wAh4VCdwnkkPWfPsrGnWgKkg7KdTaXrvJKaE0tioWbN4NO9adHxxDmEMpHUaT---PT58f1w1DH8IsytC8H6w2NiriITXpxIVTjezPhMG2PKAMWlddKjJKmedlaOwQfEltH1rUeFD7XUCzAQxhrM1YBLkCtpxrAD8G3xcuLU_VodQQUvQJoK6PaqK8KhfMz_h3qMCaOdjtTIW_qdOpIdNleRy0-lwzJ-LwyILQkHEvKx6zd5a_3BCMWdKbm3L2o985JLjpcCGa6vyZTW16jWYyKvKutgaU7epXqtZnmLfqmt8lCbSTErfznzfIXSs_dCZnin9K-wpK5uFu7ph7bFBnhc1uvXsMI90aY3CfC-eNxC3GqItNza-NS-bPMyazta65uFEcH6Uld-yuGrOzD82thjE_RwZ54GyBm0GFbPGZHTF_bVzuvu6Sz4-PgE"
+    },
+    {
+      "id": "glasshouse",
+      "name": "Glasshouse",
+      "by": "Yigder",
+      "note": "Frosted glass, a pink-red accent, big bold titles, Cupertino icons",
+      "code": "PRISMLOOK1:dZLNbqswEIXfxet20R9VFTuX0gTJgQiIeruyjOsEq9SmHpN70yrvfseQhFRVt-fDZ2bO4YsYEpFZKwAa24MiF2RLoi8ibWsdB9s7qfADiOJVWeULxEJKZTxqOrq8ub-6u749iVz9EzKgOrpCsdWbxnPwu3a0eJ6nVYI69G4tpOJeDz4QZcmqKihDtLboIhurj1NZQjPUvfat4qA_R5nRYhac_K5TXIbltTyN7VqxU46PT_6qsMTw6CFnj4ildUY5GKTkD84dNv3o9SvfBKeTz9pZ8Oo3tRMbNalGbM8OfWI5rdJsdgCtqFU7DqTsmb6UYXNRcy2tmUKgcZxkFaJ3bTQ_HDF5xrR4nI6rhXzbONub1wEuknIeTJ0w0Fl3HvqMvSznYSJI19f1N89DIicylP69qiPyTf9ej2XlWSB17z2uD43oRrNlytgQ7zbMCDIXzmvw4-VxWmCZIeud0xLOtlgWabmYwM_GDkDg_2QGvaxoUU2gs6C9tiOr5ikGtb8gOvzGHeaEcrxaJgU2kpP9_j8"
+    }
+  ]
+}

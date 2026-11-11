@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- "Play as a DJ set" tile in Android Auto's lists: a record and its tone arm on a rounded square, beside "Shuffle play". -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:fillColor="#FF636363"
+        android:pathData="M10,0 L38,0 Q48,0 48,10 L48,38 Q48,48 38,48 L10,48 Q0,48 0,38 L0,10 Q0,0 10,0 Z" />
+    <group
+        android:scaleX="1.25"
+        android:scaleY="1.25"
+        android:translateX="9"
+        android:translateY="9">
+        <path
+            android:fillColor="#00000000"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="1.5"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:pathData="M11 6a7.5 7.5 0 1 0 0 15a7.5 7.5 0 1 0 0 -15M11 10.5a3 3 0 1 0 0 6a3 3 0 1 0 0 -6M17.5 3.5l2.5 2.5-3.2 5.6" />
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M11 12.6a0.9 0.9 0 1 0 0 1.8a0.9 0.9 0 1 0 0 -1.8z" />
+    </group>
+</vector>

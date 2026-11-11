@@ -1,0 +1,20 @@
+[
+  {
+    "endTime" : "2024-01-02 22:05",
+    "artistName" : "The Weeknd",
+    "trackName" : "Blinding Lights",
+    "msPlayed" : 200100
+  },
+  {
+    "endTime" : "2024-01-02 22:09",
+    "artistName" : "Manuel Turizo",
+    "trackName" : "La Bachata",
+    "msPlayed" : 269000
+  },
+  {
+    "endTime" : "2024-02-11 07:30",
+    "artistName" : "米津玄師",
+    "trackName" : "Lemon",
+    "msPlayed" : 255000
+  }
+]

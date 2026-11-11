@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android Auto's tile for a playlist or mix whose cover is missing or couldn't be fetched (the car left those blank):
+     design/icons/QueueMusic.svg on a rounded square. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:fillColor="#FF474747"
+        android:pathData="M10,0 L38,0 Q48,0 48,10 L48,38 Q48,48 38,48 L10,48 Q0,48 0,38 L0,10 Q0,0 10,0 Z" />
+    <group
+        android:scaleX="1.25"
+        android:scaleY="1.25"
+        android:translateX="9"
+        android:translateY="9">
+        <path
+            android:fillColor="#00000000"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="1.5"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:pathData="M4.5 6.5h12M4.5 11.5h12M4.5 16.5h6M17.25 18v-7.5l2.5 1M15.5 16.25a1.75 1.75 0 1 0 0 3.5a1.75 1.75 0 1 0 0 -3.5" />
+    </group>
+</vector>

@@ -1,0 +1,45 @@
+[{
+  "header": "YouTube Music",
+  "title": "Watched Blinding Lights",
+  "titleUrl": "https://music.youtube.com/watch?v=fHI8X4OXluQ",
+  "subtitles": [{
+    "name": "The Weeknd - Topic",
+    "url": "https://www.youtube.com/channel/UClYV6hHlupm_S_ObS1W-DYw"
+  }],
+  "time": "2024-05-01T10:10:00.000Z",
+  "products": ["YouTube"],
+  "activityControls": ["YouTube watch history"]
+},{
+  "header": "YouTube",
+  "title": "Watched How to fix a bike chain",
+  "titleUrl": "https://www.youtube.com/watch?v=abcdefghijk",
+  "subtitles": [{"name": "Bike Guy"}],
+  "time": "2024-05-01T10:05:00.000Z",
+  "products": ["YouTube"]
+},{
+  "header": "YouTube Music",
+  "title": "Has visto Tití Me Preguntó",
+  "titleUrl": "https://music.youtube.com/watch?v=UvsYgm6e-vM",
+  "subtitles": [{"name": "Bad Bunny - Topic"}],
+  "time": "2024-05-01T10:06:00.000Z",
+  "products": ["YouTube"]
+},{
+  "header": "YouTube Music",
+  "title": "Watched a video that has been removed",
+  "time": "2024-05-01T09:59:00.000Z",
+  "products": ["YouTube"]
+},{
+  "header": "YouTube Music",
+  "title": "Watched Some advert",
+  "titleUrl": "https://www.youtube.com/watch?v=AAAAAAAAAAA",
+  "time": "2024-05-01T09:58:00.000Z",
+  "products": ["YouTube"],
+  "details": [{"name": "From Google Ads"}]
+},{
+  "header": "YouTube Music",
+  "title": "Watched Africa",
+  "titleUrl": "https://music.youtube.com/watch?v=qDLJ3pUZm9A",
+  "subtitles": [{"name": "TOTO - Topic"}],
+  "time": "2024-04-30T20:00:00.000Z",
+  "products": ["YouTube"]
+}]

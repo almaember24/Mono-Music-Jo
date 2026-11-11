@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <!-- Saving lyrics into your music files on Android 9 and older (newer ones ask per change instead). -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Prism Connect: finding speakers and TVs on the Wi-Fi (SSDP multicast). -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Blend: scanning a friend's code (asked for only then). Phones without a camera can still paste one. -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <!-- Song recognition: listens only while its screen is open (asked for on first use). -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <!-- Installing Prism's own updates from GitHub (the listener confirms each in Android's installer). -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.UPDATE_PACKAGES_WITHOUT_USER_ACTION" />
+    <!-- Only to open Android's "uninstall Prism?" prompt when moving to the newly signed Prism. -->
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+    <!-- Prism's lock screen (off by default; asked for only when it's turned on). Android lets a screen start from the
+         background only with "Display over other apps", which is the only reason it's here: Prism never draws over
+         other apps. The full-screen intent is the fallback when that isn't allowed: it comes up later, as the phone wakes. -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+
+    <!-- Prism TV (1.8.0): the same APK on Android TV and Google TV. A TV has no touchscreen, often no Wi-Fi (Ethernet),
+         camera or autofocus; none of them is needed (microphone and camera are declared above). -->
+    <uses-feature android:name="android.software.leanback" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <uses-feature android:name="android.hardware.wifi" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.DISPLAY_AUDIO_EFFECT_CONTROL_PANEL" />
+        </intent>
+        <!-- Android Auto's "is the phone projecting to a car right now" provider. -->
+        <provider android:authorities="androidx.car.app.connection" />
+        <!-- The Pixel Watch / Wear OS companion relays the watch's media controls: the session has to be able to
+             see it to accept them as a known controller. -->
+        <package android:name="com.google.android.apps.wear.companion" />
+        <package android:name="com.google.android.wearable.app" />
+    </queries>
+
+    <application
+        android:name=".PrismApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:banner="@drawable/tv_banner"
+        android:enableOnBackInvokedCallback="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:label="${appLabel}"
+        android:localeConfig="@xml/locales_config"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Prism"
+        tools:targetApi="36">
+
+        <!-- Profiling from adb: only the side-by-side test copy ("Prism Dev", build.gradle.kts). -->
+        <profileable
+            android:shell="${profileable}"
+            tools:targetApi="29" />
+
+        <!-- The app's one screen. Its launcher entries are the aliases below, one per app icon (#20). -->
+        <activity
+            android:name=".PrismActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|uiMode"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:supportsPictureInPicture="true"
+            android:resizeableActivity="true"
+            android:windowSoftInputMode="adjustResize">
+            <!-- Holding the "Prism" Quick Settings tile opens Prism. -->
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" />
+                <data android:host="music.youtube.com" />
+            </intent-filter>
+            <!-- YouTube / YouTube Music links shared from other apps ("Play in Prism"). -->
+            <intent-filter android:label="@string/open_in_prism">
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <!-- Looks (1.7.3): a .prismlook file (a zip) sent to Prism or opened with it. -->
+            <intent-filter android:label="@string/open_in_prism">
+                <action android:name="android.intent.action.SEND" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="application/zip" />
+            </intent-filter>
+            <!-- Last.fm's sign-in page sends the browser back here with a token (1.7.8). -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="prism" android:host="lastfm" />
+                <!-- Back from Spotify's authorize page (1.8.1): its loopback answer sends the browser here. -->
+                <data android:scheme="prism" android:host="spotify" />
+                <!-- A Prism TV's pairing QR code (1.8.0). -->
+                <data android:scheme="prism" android:host="pair" />
+            </intent-filter>
+        </activity>
+
+        <!-- App icons (Settings → Appearance → App icon, #20): exactly one of these launcher entries is enabled
+             (`AppIcons`). The classic one keeps the old ".MainActivity" name, so home-screen icons from before
+             1.6.7 still point at it. -->
+        <activity-alias android:name=".MainActivity" android:targetActivity=".PrismActivity" android:exported="true"
+            android:enabled="true" android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher">
+            <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
+        </activity-alias>
+        <activity-alias android:name=".IconSpectrum" android:targetActivity=".PrismActivity" android:exported="true"
+            android:enabled="false" android:icon="@mipmap/ic_launcher_spectrum" android:roundIcon="@mipmap/ic_launcher_spectrum">
+            <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
+        </activity-alias>
+        <activity-alias android:name=".IconSolid" android:targetActivity=".PrismActivity" android:exported="true"
+            android:enabled="false" android:icon="@mipmap/ic_launcher_solid" android:roundIcon="@mipmap/ic_launcher_solid">
+            <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
+        </activity-alias>
+        <activity-alias android:name=".IconLight" android:targetActivity=".PrismActivity" android:exported="true"
+            android:enabled="false" android:icon="@mipmap/ic_launcher_light" android:roundIcon="@mipmap/ic_launcher_light">
+            <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
+        </activity-alias>
+        <activity-alias android:name=".IconWave" android:targetActivity=".PrismActivity" android:exported="true"
+            android:enabled="false" android:icon="@mipmap/ic_launcher_wave" android:roundIcon="@mipmap/ic_launcher_wave">
+            <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
+        </activity-alias>
+        <activity-alias android:name=".IconMidnight" android:targetActivity=".PrismActivity" android:exported="true"
+            android:enabled="false" android:icon="@mipmap/ic_launcher_midnight" android:roundIcon="@mipmap/ic_launcher_midnight">
+            <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
+        </activity-alias>
+        <activity-alias android:name=".IconDusk" android:targetActivity=".PrismActivity" android:exported="true"
+            android:enabled="false" android:icon="@mipmap/ic_launcher_dusk" android:roundIcon="@mipmap/ic_launcher_dusk">
+            <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
+        </activity-alias>
+        <activity-alias android:name=".IconPaper" android:targetActivity=".PrismActivity" android:exported="true"
+            android:enabled="false" android:icon="@mipmap/ic_launcher_paper" android:roundIcon="@mipmap/ic_launcher_paper">
+            <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
+        </activity-alias>
+        <activity-alias android:name=".IconNeon" android:targetActivity=".PrismActivity" android:exported="true"
+            android:enabled="false" android:icon="@mipmap/ic_launcher_neon" android:roundIcon="@mipmap/ic_launcher_neon">
+            <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
+        </activity-alias>
+        <activity-alias android:name=".IconPastel" android:targetActivity=".PrismActivity" android:exported="true"
+            android:enabled="false" android:icon="@mipmap/ic_launcher_pastel" android:roundIcon="@mipmap/ic_launcher_pastel">
+            <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
+        </activity-alias>
+        <activity-alias android:name=".IconLine" android:targetActivity=".PrismActivity" android:exported="true"
+            android:enabled="false" android:icon="@mipmap/ic_launcher_line" android:roundIcon="@mipmap/ic_launcher_line">
+            <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
+        </activity-alias>
+        <activity-alias android:name=".IconGold" android:targetActivity=".PrismActivity" android:exported="true"
+            android:enabled="false" android:icon="@mipmap/ic_launcher_gold" android:roundIcon="@mipmap/ic_launcher_gold">
+            <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
+        </activity-alias>
+
+        <!-- Prism TV (1.8.0): the TV launcher's entry, with its own screens for a remote (ui/tv). On a TV the phone's
+             screen above sends itself here. -->
+        <activity
+            android:name=".TvActivity"
+            android:banner="@drawable/tv_banner"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboard|keyboardHidden|navigation|uiMode"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.Prism">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Prism's screensaver (1.8.0), where the TV or phone lets you pick one: the ambient screen. -->
+        <service
+            android:name=".ui.tv.PrismDream"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_DREAM_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.dreams.DreamService" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <!-- "Hey Google, play … on Prism": Assistant only offers apps that take this as music sources (Gemini keeps its own
+             short list of linked services, and doesn't use it: #362). It runs over the lock screen (the phone sits locked in the car), where it shows nothing and closes at once. -->
+        <activity
+            android:name=".playback.VoicePlayActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:showWhenLocked="true"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            tools:targetApi="27">
+            <intent-filter>
+                <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.lockscreen.LockScreenActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
+            android:screenOrientation="userPortrait"
+            android:showWhenLocked="true"
+            android:taskAffinity=""
+            android:theme="@style/Theme.Prism.LockScreen"
+            tools:targetApi="27" />
+
+        <!-- The playback service, once per app icon (Android Auto shows the media service's icon); only the one for the
+             chosen icon is enabled (PlaybackServices.target). -->
+        <service
+            android:name=".playback.PlaybackService"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher"
+            android:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaLibraryService" />
+                <action android:name="androidx.media3.session.MediaSessionService" />
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".playback.PlaybackServiceSpectrum"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_spectrum"
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaLibraryService" />
+                <action android:name="androidx.media3.session.MediaSessionService" />
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".playback.PlaybackServiceSolid"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_solid"
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaLibraryService" />
+                <action android:name="androidx.media3.session.MediaSessionService" />
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".playback.PlaybackServiceLight"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_light"
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaLibraryService" />
+                <action android:name="androidx.media3.session.MediaSessionService" />
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".playback.PlaybackServiceWave"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_wave"
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaLibraryService" />
+                <action android:name="androidx.media3.session.MediaSessionService" />
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".playback.PlaybackServiceMidnight"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_midnight"
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaLibraryService" />
+                <action android:name="androidx.media3.session.MediaSessionService" />
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".playback.PlaybackServiceDusk"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_dusk"
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaLibraryService" />
+                <action android:name="androidx.media3.session.MediaSessionService" />
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".playback.PlaybackServicePaper"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_paper"
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaLibraryService" />
+                <action android:name="androidx.media3.session.MediaSessionService" />
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".playback.PlaybackServiceNeon"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_neon"
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaLibraryService" />
+                <action android:name="androidx.media3.session.MediaSessionService" />
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".playback.PlaybackServicePastel"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_pastel"
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaLibraryService" />
+                <action android:name="androidx.media3.session.MediaSessionService" />
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".playback.PlaybackServiceLine"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_line"
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaLibraryService" />
+                <action android:name="androidx.media3.session.MediaSessionService" />
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".playback.PlaybackServiceGold"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_gold"
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaLibraryService" />
+                <action android:name="androidx.media3.session.MediaSessionService" />
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+
+        <!-- Headset / Bluetooth media buttons and system playback resumption. -->
+        <receiver
+            android:name="androidx.media3.session.MediaButtonReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Cover art for Android Auto's browse lists (content:// only there). -->
+        <provider
+            android:name=".playback.ArtworkProvider"
+            android:authorities="${applicationId}.artwork"
+            android:exported="true"
+            tools:ignore="ExportedContentProvider" />
+
+        <!-- Sharing Replay cards (images saved to the app's cache). -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.share"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/share_paths" />
+        </provider>
+
+        <!-- A widget's own settings (1.7.7): when it's added, and from holding it -> Settings. -->
+        <activity
+            android:name=".ui.screens.WidgetConfigActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:taskAffinity=""
+            android:theme="@style/Theme.Prism">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" /></intent-filter>
+        </activity>
+
+        <!-- Home screen widgets: one per look, so each shows up in the launcher's list. -->
+        <receiver
+            android:name=".widget.PrismWidget"
+            android:exported="false"
+            android:label="@string/widget_prism_name">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_prism_info" />
+        </receiver>
+        <receiver
+            android:name=".widget.SpotifyStyleWidget"
+            android:exported="false"
+            android:label="@string/widget_spotify_name">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_spotify_info" />
+        </receiver>
+        <receiver
+            android:name=".widget.AppleStyleWidget"
+            android:exported="false"
+            android:label="@string/widget_apple_name">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_apple_info" />
+        </receiver>
+        <receiver
+            android:name=".widget.YtMusicStyleWidget"
+            android:exported="false"
+            android:label="@string/widget_ytmusic_name">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_ytmusic_info" />
+        </receiver>
+        <receiver
+            android:name=".widget.CoverWidget"
+            android:exported="false"
+            android:label="@string/widget_cover_name">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_cover_info" />
+        </receiver>
+        <receiver
+            android:name=".widget.DiscWidget"
+            android:exported="false"
+            android:label="@string/widget_disc_name">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_disc_info" />
+        </receiver>
+        <receiver
+            android:name=".widget.StripWidget"
+            android:exported="false"
+            android:label="@string/widget_strip_name">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_strip_info" />
+        </receiver>
+        <receiver
+            android:name=".widget.RecognizeWidget"
+            android:exported="false"
+            android:label="@string/widget_recognize_name">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_recognize_info" />
+        </receiver>
+        <!-- The Recognize widget and Quick Settings tile's listening card, over whatever is on screen. -->
+        <activity
+            android:name=".ui.screens.RecognizeActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:taskAffinity="${applicationId}.recognize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <receiver
+            android:name=".widget.WidgetActionReceiver"
+            android:exported="false" />
+
+        <!-- The downloads notification's Cancel (1.7.8). -->
+        <receiver
+            android:name=".download.CancelDownloadsReceiver"
+            android:exported="false" />
+
+        <!-- Results from Android's installer while Prism updates itself. -->
+        <receiver
+            android:name=".data.UpdateInstallReceiver"
+            android:exported="false" />
+
+        <!-- Android Auto -->
+        <meta-data
+            android:name="com.google.android.gms.car.application"
+            android:resource="@xml/automotive_app_desc" />
+        <meta-data
+            android:name="com.google.android.gms.car.notification.SmallIcon"
+            android:resource="@drawable/ic_notification" />
+
+        <service
+            android:name=".download.PrismDownloadService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync">
+            <intent-filter>
+                <action android:name="androidx.media3.exoplayer.downloadService.action.RESTART" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <!-- Quick Settings: "Prism" plays or pauses what's lined up (1.7.8). -->
+        <service
+            android:name=".playback.PlayTileService"
+            android:exported="true"
+            android:icon="@drawable/ic_w_play"
+            android:label="@string/tile_play"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <!-- Quick Settings: "Recognize song" opens Prism already listening. -->
+        <service
+            android:name=".data.recognize.RecognizeTileService"
+            android:exported="true"
+            android:icon="@drawable/ic_tile_recognize"
+            android:label="@string/tile_recognize"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
+        <!--
+             1.8.3 (#388's log): ONNX Runtime (Sing) brings a content provider that runs at every start-up to set up its
+             telemetry, and fails there anyway (its native library is only downloaded with Sing). Prism sends nothing
+             anywhere and Sing loads the library itself when used, so the provider is left out.
+        -->
+        <provider
+            android:name="ai.onnxruntime.TelemetryInitializer"
+            android:authorities="${applicationId}.onnxruntime_telemetry_initializer"
+            tools:node="remove" />
+    </application>
+</manifest>

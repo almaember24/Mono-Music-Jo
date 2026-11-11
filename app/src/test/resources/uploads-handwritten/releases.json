@@ -1,0 +1,22 @@
+{
+  "contents": { "singleColumnBrowseResultsRenderer": { "tabs": [ { "tabRenderer": { "content": { "sectionListRenderer": { "contents": [ {
+    "gridRenderer": {
+      "items": [
+        { "musicTwoRowItemRenderer": {
+          "title": { "runs": [ { "text": "Ghost Stories", "navigationEndpoint": { "browseEndpoint": { "browseId": "FEmusic_library_privately_owned_release_detailb_po_GHOST" } } } ] },
+          "subtitle": { "runs": [ { "text": "Album" }, { "text": " • " }, { "text": "Coldplay" }, { "text": " • " }, { "text": "2014" } ] },
+          "thumbnailRenderer": { "musicThumbnailRenderer": { "thumbnail": { "thumbnails": [ { "url": "https://lh3.googleusercontent.com/ghost=w226-h226" } ] } } },
+          "menu": { "menuRenderer": { "items": [
+            { "menuNavigationItemRenderer": { "navigationEndpoint": { "watchPlaylistEndpoint": { "playlistId": "MLPRb_po_GHOST" } } } }
+          ] } }
+        } },
+        { "musicTwoRowItemRenderer": {
+          "title": { "runs": [ { "text": "18 Months" } ] },
+          "navigationEndpoint": { "browseEndpoint": { "browseId": "FEmusic_library_privately_owned_release_detailb_po_18M" } },
+          "subtitle": { "runs": [ { "text": "Álbum" }, { "text": " • " }, { "text": "Calvin Harris" } ] }
+        } },
+        { "musicTwoRowItemRenderer": { "subtitle": { "runs": [ { "text": "no title, no link" } ] } } }
+      ]
+    }
+  } ] } } } } ] } }
+}
